@@ -10,7 +10,7 @@ int main()
 
   printf("Enter %d numbers: ", N);
 
-  for (i = 0; i < N; i++)
+  for (i = 0; i < (sizeof(a) / sizeof(a[10])); i++)
   {
     scanf("%d", &a[i]);
   }
