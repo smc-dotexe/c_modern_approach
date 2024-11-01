@@ -12,6 +12,7 @@ int main()
 
   printf("sizeof(a): %d\n", sizeof(a));
   printf("sizeof(i): %d\n", sizeof(i));
+
   // you can treat multi-diemensional arrays as a one-dimensional array
   for (i = &a[0][0]; i < &a[0][0] + NUM_ROW * NUM_COL; i++)
   {
