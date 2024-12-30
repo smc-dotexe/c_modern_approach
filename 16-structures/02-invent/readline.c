@@ -18,6 +18,6 @@ int read_line(char str[], int n)
     ch = getchar();
   }
 
-  str[i] = '\n';
+  str[i] = '\0';
   return i;
 }
