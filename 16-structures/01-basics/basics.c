@@ -56,5 +56,14 @@ int main()
           {"Brazil", 55},
           {"China", 86}};
 
-    return 0;
+  struct
+  {
+    int x, y
+  } x;
+  struct
+  {
+    int x, y
+  } y;
+
+  return 0;
 }

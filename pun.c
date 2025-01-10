@@ -1,6 +1,6 @@
-/* 
- * Name: pun.c 
- * Purpose: c tutorial 
+/*
+ * Name: pun.c
+ * Purpose: c tutorial
  * Author: Shane McGuire
  * Date: 2024-05-19
  */
@@ -17,7 +17,7 @@ int main()
 
     float profit = paid - price;
 
-    printf("$%.2f\nTotal profit", profit);
-    
+    printf("$%.2f\nTotal profit\n", profit);
+
     return 0;
 }
