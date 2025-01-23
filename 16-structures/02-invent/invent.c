@@ -1,6 +1,7 @@
 // Maintains a parts database (array version)
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "readline.h"
 
 #define NAME_LEN 25
@@ -20,6 +21,7 @@ void insert();
 void search();
 void update();
 void print();
+int compare_parts(const void *p, const void *q);
 
 // main: Prompts the user to enter an operation code,
 // then calls a function to perform the requested
@@ -51,6 +53,9 @@ int main()
       break;
     case 'p':
       print();
+      break;
+    case 'q':
+      qsort(inventory, num_parts, sizeof(struct part), compare_parts);
       break;
     }
 
@@ -112,6 +117,8 @@ void insert()
   printf("Enter quantity on hand: ");
   scanf("%d", &inventory[num_parts].on_hand);
   num_parts++;
+
+  
 }
 
 // search: Prompts the user to enter a part number, then
@@ -174,4 +181,18 @@ void print()
   for (i = 0; i < num_parts; i++)
     printf("%7d       %-25s%11d\n", inventory[i].number,
            inventory[i].name, inventory[i].on_hand);
+}
+
+int compare_parts(const void *p, const void *q) 
+{
+  const struct part *p1 = p;
+  const struct part *q1 = q;
+
+  if (p1->number < q1->number) {
+    return -1;
+  } else if (p1->number == q1->number) {
+    return 0;
+  } else {
+    return 1;
+  }
 }
